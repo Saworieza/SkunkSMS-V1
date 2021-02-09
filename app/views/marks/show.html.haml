@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Mark:
+  = @mark.mark
+%p
+  %b Subject:
+  = @mark.subject
+%p
+  %b Exam:
+  = @mark.exam
+
+= link_to 'Edit', edit_mark_path(@mark)
+\|
+= link_to 'Back', marks_path

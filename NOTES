@@ -1,0 +1,29 @@
+Do not add refrences when creating students
+
+
+Add Marks once and bring in all students to the marks addition
+
+New Exam (process) {
+	Select Academic Year
+	Select Term
+	Select Class
+	Select Stream
+	Autopopulate Subjects With the mark field beside the subject 
+
+	*Populate students from stream
+	add marks (how) to each student/where do you place the mark field??
+}
+
+Exam has many Students
+Student belongs to an exam
+
+Model mark
+	belongs to student
+	exams
+	subject
+
+Results model
+	See above under Exam
+
+
+When Entering Results
