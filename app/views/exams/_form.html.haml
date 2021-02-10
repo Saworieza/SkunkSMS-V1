@@ -14,6 +14,7 @@
     = f.collection_select :student_id, Student.order(:adm_no), :id, :name, include_blank: true
     /= f.text_field :student
 
+  %hr
   = f.fields_for :marks do |m|
     %div
       = m.label :subject
@@ -21,6 +22,6 @@
 
       = m.label :mark
       = m.text_field :mark 
-      
+    %hr
   .actions
     = f.submit 'Save'
