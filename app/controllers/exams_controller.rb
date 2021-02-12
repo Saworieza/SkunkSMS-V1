@@ -13,7 +13,7 @@ class ExamsController < ApplicationController
   # GET /exams/new
   def new
     @exam = Exam.new
-    3.times {@exam.marks.build}
+    4.times {@exam.marks.build}
   end
 
   # GET /exams/1/edit

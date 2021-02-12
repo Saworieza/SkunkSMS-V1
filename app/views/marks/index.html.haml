@@ -14,8 +14,8 @@
     - @marks.each do |mark|
       %tr
         %td= mark.mark
-        %td= mark.subject
-        %td= mark.exam
+        %td= mark.subject.name
+        %td= mark.exam.name
         %td= link_to 'Show', mark
         %td= link_to 'Edit', edit_mark_path(mark)
         %td= link_to 'Destroy', mark, method: :delete, data: { confirm: 'Are you sure?' }

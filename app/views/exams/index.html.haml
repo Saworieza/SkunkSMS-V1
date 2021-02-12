@@ -1,10 +1,15 @@
-%h1 Listing exams
+%h1 Listing Exam Results
 
 %table
   %thead
     %tr
       %th Exam Name
       %th Student
+      / %th
+      %th english
+      %th swahili
+      %th maths
+      %th history
       %th
       %th
       %th
@@ -14,18 +19,10 @@
       %tr
         %td= exam.name
         %td= exam.student.name
-        %td
-          %table
-            %thead
-              %tr
-                %th Subject
-                %th Mark
-
-          %tbody
-            - exam.marks.each do |mark|
-              %tr
-                %td= mark.subject.name
-                %td= mark.mark
+        / %td
+        - exam.marks.each do |mark|
+          / %td= mark.subject.name
+          %td= mark.mark
         %td= link_to 'Show', exam
         %td= link_to 'Edit', edit_exam_path(exam)
         %td= link_to 'Destroy', exam, method: :delete, data: { confirm: 'Are you sure?' }

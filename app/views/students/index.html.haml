@@ -15,7 +15,7 @@
       %tr
         %td= student.adm_no
         %td= student.name
-        %td= student.classroom
+        %td= student.classroom.name
         %td= link_to 'Show', student
         %td= link_to 'Edit', edit_student_path(student)
         %td= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' }
