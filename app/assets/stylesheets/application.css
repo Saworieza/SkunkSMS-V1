@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+.thead{
+	position: relative;
+	top:-20px;
+	transform: rotate(290deg);
+	border-bottom: thin solid black;
+}
+table td{
+	/*border: 1px solid black;*/
+	border-collapse: collapse;
+}

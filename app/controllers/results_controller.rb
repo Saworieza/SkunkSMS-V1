@@ -13,6 +13,7 @@ class ResultsController < ApplicationController
   # GET /results/new
   def new
     @result = Result.new
+    4.times { @result.marks.build}
   end
 
   # GET /results/1/edit
@@ -64,6 +65,6 @@ class ResultsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def result_params
-      params.require(:result).permit(:exam_id, :student_id)
+      params.require(:result).permit(:exam_id, :student_id, marks_attributes: [:id, :mark, :subject_id])
     end
 end

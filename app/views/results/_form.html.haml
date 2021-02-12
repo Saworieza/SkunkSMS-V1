@@ -8,9 +8,23 @@
 
   .field
     = f.label :exam
-    = f.text_field :exam
+    = f.collection_select :exam_id, Exam.order(:name), :id, :name, include_blank: true
+    / = f.text_field :exam
   .field
     = f.label :student
-    = f.text_field :student
+    = f.collection_select :student_id, Student.order(:adm_no), :id, :stud_name, include_blank: true
+    / = f.text_field :student
+
+  %hr
+  = f.fields_for :marks do |mark|
+    .field
+      = mark.label :subject
+      = mark.collection_select :subject_id, Subject.order(:code), :id, :name, include_blank: true
+      / = mark.text_field :subject
+    .field
+      = mark.label :mark
+      = mark.text_field :mark
+    %hr 
+
   .actions
     = f.submit 'Save'

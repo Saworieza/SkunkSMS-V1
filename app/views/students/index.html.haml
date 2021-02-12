@@ -18,8 +18,8 @@
         %td= student.adm_no
         %td= student.first_name
         %td= student.last_name
-        %td= student.academic_year
-        %td= student.exam
+        %td= student.academic_year.year
+        %td= student.exam.name
         %td= link_to 'Show', student
         %td= link_to 'Edit', edit_student_path(student)
         %td= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' }

@@ -11,10 +11,10 @@
   = @student.last_name
 %p
   %b Academic year:
-  = @student.academic_year
+  = @student.academic_year.year
 %p
   %b Exam:
-  = @student.exam
+  = @student.exam.name
 
 = link_to 'Edit', edit_student_path(@student)
 \|

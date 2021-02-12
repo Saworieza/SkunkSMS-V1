@@ -2,10 +2,24 @@
 
 %p
   %b Exam:
-  = @result.exam
+  = @result.exam.name
 %p
   %b Student:
-  = @result.student
+  = @result.student.stud_name
+%hr
+
+%table
+  %thead
+    %tr
+      %th Subject
+      %th Mark
+
+  %tbody
+    - @result.marks.each do |mark|
+      %tr
+        %td= mark.subject.name
+        %td= mark.mark
+
 
 = link_to 'Edit', edit_result_path(@result)
 \|

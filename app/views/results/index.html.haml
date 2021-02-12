@@ -3,17 +3,26 @@
 %table
   %thead
     %tr
-      %th Exam
+      %th Ac Term
+      %th Exam 
       %th Student
-      %th
+      %th.thead English
+      %th.thead Swa
+      %th.thead Maths
+      %th.thead History
       %th
       %th
 
   %tbody
     - @results.each do |result|
       %tr
-        %td= result.exam
-        %td= result.student
+        %td= result.exam.term.name
+        %td= result.exam.name 
+        %td= result.student.stud_name
+        - result.marks.each do |mark|
+          / %td= mark.subject.name
+          %td= mark.mark
+
         %td= link_to 'Show', result
         %td= link_to 'Edit', edit_result_path(result)
         %td= link_to 'Destroy', result, method: :delete, data: { confirm: 'Are you sure?' }

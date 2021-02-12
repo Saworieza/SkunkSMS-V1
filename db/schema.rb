@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_12_085508) do
+ActiveRecord::Schema.define(version: 2021_02_12_104620) do
 
   create_table "academic_years", force: :cascade do |t|
     t.string "year"
@@ -35,10 +35,12 @@ ActiveRecord::Schema.define(version: 2021_02_12_085508) do
 
   create_table "marks", force: :cascade do |t|
     t.string "mark"
-    t.integer "student_id"
+    t.integer "subject_id"
+    t.integer "result_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["student_id"], name: "index_marks_on_student_id"
+    t.index ["result_id"], name: "index_marks_on_result_id"
+    t.index ["subject_id"], name: "index_marks_on_subject_id"
   end
 
   create_table "results", force: :cascade do |t|

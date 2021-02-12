@@ -17,9 +17,11 @@
     = f.text_field :last_name
   .field
     = f.label :academic_year
-    = f.text_field :academic_year
+    = f.collection_select :academic_year_id, AcademicYear.order(:year), :id, :year, include_blank: true
+    / = f.text_field :academic_year
   .field
     = f.label :exam
-    = f.text_field :exam
+    = f.collection_select :exam_id, Exam.order(:name), :id, :name, include_blank: true
+    / = f.text_field :exam
   .actions
     = f.submit 'Save'
