@@ -4,21 +4,8 @@
   %b Name:
   = @exam.name
 %p
-  %b Student:
-  = @exam.student.name
-
-%table
-  %thead
-    %tr
-      %th Subject
-      %th Mark
-
-  %tbody
-    - @exam.marks.each do |mark|
-      %tr
-        %td= mark.subject.name
-        %td= mark.mark
-
+  %b Term:
+  = @exam.term
 
 = link_to 'Edit', edit_exam_path(@exam)
 \|

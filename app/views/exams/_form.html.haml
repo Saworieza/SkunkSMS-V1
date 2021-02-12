@@ -10,18 +10,7 @@
     = f.label :name
     = f.text_field :name
   .field
-    = f.label :student
-    = f.collection_select :student_id, Student.order(:adm_no), :id, :name, include_blank: true
-    /= f.text_field :student
-
-  %hr
-  = f.fields_for :marks do |m|
-    %div
-      = m.label :subject
-      = m.collection_select :subject_id, Subject.order(:code), :id, :name, include_blank: true 
-
-      = m.label :mark
-      = m.text_field :mark 
-    %hr
+    = f.label :term
+    = f.text_field :term
   .actions
     = f.submit 'Save'

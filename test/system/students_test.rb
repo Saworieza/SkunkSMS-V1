@@ -14,9 +14,11 @@ class StudentsTest < ApplicationSystemTestCase
     visit students_url
     click_on "New Student"
 
+    fill_in "Academic year", with: @student.academic_year_id
     fill_in "Adm no", with: @student.adm_no
-    fill_in "Classroom", with: @student.classroom_id
-    fill_in "Name", with: @student.name
+    fill_in "Exam", with: @student.exam_id
+    fill_in "First name", with: @student.first_name
+    fill_in "Last name", with: @student.last_name
     click_on "Create Student"
 
     assert_text "Student was successfully created"
@@ -27,9 +29,11 @@ class StudentsTest < ApplicationSystemTestCase
     visit students_url
     click_on "Edit", match: :first
 
+    fill_in "Academic year", with: @student.academic_year_id
     fill_in "Adm no", with: @student.adm_no
-    fill_in "Classroom", with: @student.classroom_id
-    fill_in "Name", with: @student.name
+    fill_in "Exam", with: @student.exam_id
+    fill_in "First name", with: @student.first_name
+    fill_in "Last name", with: @student.last_name
     click_on "Update Student"
 
     assert_text "Student was successfully updated"

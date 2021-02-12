@@ -7,14 +7,19 @@
           %li= message
 
   .field
-    = f.label :classroom
-    = f.collection_select :classroom_id, Classroom.order(:number), :id, :name, include_blank: true
-    / = f.text_field :classroom
-  .field
     = f.label :adm_no
     = f.number_field :adm_no
   .field
-    = f.label :name
-    = f.text_field :name
+    = f.label :first_name
+    = f.text_field :first_name
+  .field
+    = f.label :last_name
+    = f.text_field :last_name
+  .field
+    = f.label :academic_year
+    = f.text_field :academic_year
+  .field
+    = f.label :exam
+    = f.text_field :exam
   .actions
     = f.submit 'Save'

@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Exam:
+  = @result.exam
+%p
+  %b Student:
+  = @result.student
+
+= link_to 'Edit', edit_result_path(@result)
+\|
+= link_to 'Back', results_path

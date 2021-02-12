@@ -4,11 +4,17 @@
   %b Adm no:
   = @student.adm_no
 %p
-  %b Name:
-  = @student.name
+  %b First name:
+  = @student.first_name
 %p
-  %b Classroom:
-  = @student.classroom.name
+  %b Last name:
+  = @student.last_name
+%p
+  %b Academic year:
+  = @student.academic_year
+%p
+  %b Exam:
+  = @student.exam
 
 = link_to 'Edit', edit_student_path(@student)
 \|

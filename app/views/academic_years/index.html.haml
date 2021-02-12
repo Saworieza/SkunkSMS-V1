@@ -1,0 +1,21 @@
+%h1 Listing academic_years
+
+%table
+  %thead
+    %tr
+      %th Year
+      %th
+      %th
+      %th
+
+  %tbody
+    - @academic_years.each do |academic_year|
+      %tr
+        %td= academic_year.year
+        %td= link_to 'Show', academic_year
+        %td= link_to 'Edit', edit_academic_year_path(academic_year)
+        %td= link_to 'Destroy', academic_year, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Academic year', new_academic_year_path

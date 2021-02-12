@@ -2,8 +2,8 @@
 
 one:
   name: MyString
-  student: one
+  term: one
 
 two:
   name: MyString
-  student: two
+  term: two

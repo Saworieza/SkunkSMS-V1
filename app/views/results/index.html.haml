@@ -1,0 +1,23 @@
+%h1 Listing results
+
+%table
+  %thead
+    %tr
+      %th Exam
+      %th Student
+      %th
+      %th
+      %th
+
+  %tbody
+    - @results.each do |result|
+      %tr
+        %td= result.exam
+        %td= result.student
+        %td= link_to 'Show', result
+        %td= link_to 'Edit', edit_result_path(result)
+        %td= link_to 'Destroy', result, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Result', new_result_path

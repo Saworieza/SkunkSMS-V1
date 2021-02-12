@@ -3,8 +3,6 @@ class CreateMarks < ActiveRecord::Migration[5.2]
     create_table :marks do |t|
       t.string :mark
       t.references :student, foreign_key: true
-      t.references :subject, foreign_key: true
-      t.references :exam, foreign_key: true
 
       t.timestamps
     end

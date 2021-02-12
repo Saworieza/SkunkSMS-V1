@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Year:
+  = @academic_year.year
+
+= link_to 'Edit', edit_academic_year_path(@academic_year)
+\|
+= link_to 'Back', academic_years_path

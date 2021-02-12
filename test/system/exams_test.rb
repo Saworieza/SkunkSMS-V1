@@ -15,7 +15,7 @@ class ExamsTest < ApplicationSystemTestCase
     click_on "New Exam"
 
     fill_in "Name", with: @exam.name
-    fill_in "Student", with: @exam.student_id
+    fill_in "Term", with: @exam.term_id
     click_on "Create Exam"
 
     assert_text "Exam was successfully created"
@@ -27,7 +27,7 @@ class ExamsTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Name", with: @exam.name
-    fill_in "Student", with: @exam.student_id
+    fill_in "Term", with: @exam.term_id
     click_on "Update Exam"
 
     assert_text "Exam was successfully updated"

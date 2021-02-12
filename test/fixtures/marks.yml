@@ -2,10 +2,8 @@
 
 one:
   mark: MyString
-  subject: one
-  exam: one
+  student: one
 
 two:
   mark: MyString
-  subject: two
-  exam: two
+  student: two

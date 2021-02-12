@@ -13,7 +13,6 @@ class ExamsController < ApplicationController
   # GET /exams/new
   def new
     @exam = Exam.new
-    4.times {@exam.marks.build}
   end
 
   # GET /exams/1/edit
@@ -65,6 +64,6 @@ class ExamsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def exam_params
-      params.require(:exam).permit(:name, :student_id, marks_attributes: [:id, :mark, :subject_id])
+      params.require(:exam).permit(:name, :term_id)
     end
 end

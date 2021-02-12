@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   resources :marks
-  resources :subjects
-  resources :exams
+  resources :results
   resources :students
+  resources :exams
+  resources :terms
+  resources :academic_years
+  resources :subjects
   resources :classrooms
   get 'home/index'
   root 'home#index'

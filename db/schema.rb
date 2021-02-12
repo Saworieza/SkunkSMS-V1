@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_09_133108) do
+ActiveRecord::Schema.define(version: 2021_02_12_085508) do
+
+  create_table "academic_years", force: :cascade do |t|
+    t.string "year"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "classrooms", force: :cascade do |t|
     t.string "name"
@@ -21,31 +27,39 @@ ActiveRecord::Schema.define(version: 2021_02_09_133108) do
 
   create_table "exams", force: :cascade do |t|
     t.string "name"
-    t.integer "student_id"
+    t.integer "term_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["student_id"], name: "index_exams_on_student_id"
+    t.index ["term_id"], name: "index_exams_on_term_id"
   end
 
   create_table "marks", force: :cascade do |t|
     t.string "mark"
     t.integer "student_id"
-    t.integer "subject_id"
-    t.integer "exam_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["exam_id"], name: "index_marks_on_exam_id"
     t.index ["student_id"], name: "index_marks_on_student_id"
-    t.index ["subject_id"], name: "index_marks_on_subject_id"
+  end
+
+  create_table "results", force: :cascade do |t|
+    t.integer "exam_id"
+    t.integer "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["exam_id"], name: "index_results_on_exam_id"
+    t.index ["student_id"], name: "index_results_on_student_id"
   end
 
   create_table "students", force: :cascade do |t|
     t.integer "adm_no"
-    t.string "name"
-    t.integer "classroom_id"
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "academic_year_id"
+    t.integer "exam_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["classroom_id"], name: "index_students_on_classroom_id"
+    t.index ["academic_year_id"], name: "index_students_on_academic_year_id"
+    t.index ["exam_id"], name: "index_students_on_exam_id"
   end
 
   create_table "subjects", force: :cascade do |t|
@@ -53,6 +67,14 @@ ActiveRecord::Schema.define(version: 2021_02_09_133108) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "terms", force: :cascade do |t|
+    t.string "name"
+    t.integer "academic_year_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["academic_year_id"], name: "index_terms_on_academic_year_id"
   end
 
 end
