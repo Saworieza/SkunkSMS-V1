@@ -33,3 +33,43 @@ Results model
 When Entering Results
 
 Use a product price an category structre with subjects being catgory, price being marks and product being students
+
+Finally Solved the subject arrangement issue 
+Move on to inline editing and autopupulate all students
+Later add edit ony if teacher is subject teacher for said class else no editing of column that doesnt belong to them
+
+Change Marks Table name to results
+Exam Table to fill the exam name field
+Student to have multiple marks ???
+
+In exam table (later result) should allow for empty exam field and mark field
+
+Create Table Academic Year
+year - textfield
+
+Creat Table Term
+name
+has many students
+
+Create Table Exam
+belongs to term
+has many students
+has name
+
+Create Table Student
+adm no
+first name
+last name
+belongs to academic year 
+belongs to term
+
+
+Create Table Results
+Belongs to exam
+Belongs to student
+Has many Marks
+
+Create Table Marks
+belongs to a subject
+has a mark
+
